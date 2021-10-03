@@ -3,8 +3,8 @@ defined('BASEPATH') or exit ('no direct script access allowed');
 
 class Web extends CI_Controller{
 
-    function construct(){
-        parent::construct();
+    function __construct(){
+        parent::__construct();
         $this->load->helper('url');
     }
 
@@ -13,5 +13,13 @@ class Web extends CI_Controller{
         $this->load->view('v_header',$data);
         $this->load->view('v_index',$data);
         $this->load->view('v_footer',$data);
+    }
+
+    public function about()
+    {
+        $data['judul'] = "Halaman About";
+        $this->load->view('v_header', $data);
+        $this->load->view('v_about', $data);
+        $this->load->view('v_footer', $data);
     }
 }
